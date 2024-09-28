@@ -2,7 +2,7 @@
   "expo": {
     "name": "Fortune",
     "slug": "Fortune",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -16,10 +16,13 @@
       "supportsTablet": true
     },
     "android": {
+      "versionCode": 4,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.erickflan100.Fortune",
+      "js engine": "hermes"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +34,17 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "50ab80fc-7ee9-42f5-933c-491cae1126d0"
+      }
     }
+  },
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-6668731572199276~5833548399"
   }
 }

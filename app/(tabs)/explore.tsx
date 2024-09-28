@@ -1,88 +1,50 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform } from 'react-native';
+import { StyleSheet } from "react-native";
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { Collapsible } from "@/components/Collapsible";
+import ParallaxScrollView from "@/components/ParallaxScrollView";
+import { ThemedText } from "@/components/ThemedText";
+import { ThemedView } from "@/components/ThemedView";
 
 export default function TabTwoScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={<Ionicons size={310} name="code-slash" style={styles.headerImage} />}>
+      headerBackgroundColor={{ light: "#fff", dark: "#151718" }}
+    >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Explore</ThemedText>
+        <ThemedText type="title">Fortune</ThemedText>
       </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
+      <ThemedText>
+        O aplicativo Fortune inclui um exemplo de investimento dos últimos dois
+        anos, onde seria possível comprar e manter as ações até a data atual ou
+        investir seguindo os sinais do RSI.
+      </ThemedText>
+      <Collapsible title="O que é RSI?">
         <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
+          RSI é a sigla para Relative Strength Index, ou Índice de Força
+          Relativa em português. O RSI é um indicador técnico utilizado na
+          análise de mercados financeiros para medir a velocidade e a variação
+          dos movimentos de preço. Ele oscila entre 0 e 100 e é geralmente
+          utilizado para identificar condições de sobrecompra ou sobrevenda em
+          um ativo. Valores acima de 70 indicam que o ativo pode estar
+          sobrecomprado, enquanto valores abaixo de 30 sugerem que ele pode
+          estar sobrevendido. O RSI ajuda os investidores a tomar decisões
+          informadas sobre compra e venda de ativos.
         </ThemedText>
       </Collapsible>
-      <Collapsible title="Images">
+      <Collapsible title="Como foi usado o RSI para os Ativos?">
         <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
+          Foi utilizado um período de 22 dias úteis. Quando o RSI indicou
+          sobrevenda, uma compra foi realizada. A saída do ativo ocorreu quando
+          o RSI atingiu 40 pontos ou, por segurança, após 10 dias de permanência
+          no ativo.
         </ThemedText>
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
       </Collapsible>
-      <Collapsible title="Custom fonts">
+      <Collapsible title="Quais serão as próximas novidades do Fortune?">
         <ThemedText>
-          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText> to see how to load{' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </ThemedText>
+          Novos ativos e funcionalidades serão lançados, com atualizações
+          semanais. Entre as novas funcionalidades, estarão a escolha do
+          período, sinais de compra e venda utilizando o RSI, e muito mais.
         </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user's current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText> library
-          to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
       </Collapsible>
     </ParallaxScrollView>
   );
@@ -90,13 +52,13 @@ export default function TabTwoScreen() {
 
 const styles = StyleSheet.create({
   headerImage: {
-    color: '#808080',
+    color: "#808080",
     bottom: -90,
     left: -35,
-    position: 'absolute',
+    position: "absolute",
   },
   titleContainer: {
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 8,
   },
 });
